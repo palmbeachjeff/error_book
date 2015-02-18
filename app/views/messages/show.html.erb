@@ -12,6 +12,8 @@
   </dl>
 </div>
 
+<%= image_tag @message.image.url(:medium) %>
+
 <div class="form-group">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               messages_path, :class => 'btn btn-default'  %>
@@ -22,5 +24,7 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+
 </div>
 

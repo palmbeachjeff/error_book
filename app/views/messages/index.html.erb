@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:message) %></th>
       <th><%= model_class.human_attribute_name(:resolved) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= message.message %></td>
         <td><%= message.resolved %></td>
         <td><%=l message.created_at, format: :long %></td>
+        <td><%= image_tag message.image.url(:thumb) %></td>
         <td>
           <%= link_to message_path(message), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
