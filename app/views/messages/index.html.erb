@@ -1,6 +1,8 @@
 <%- model_class = Message -%>
 <div class="page-header">
   <h1><%=t '.title', :default => Message %></h1>
+<%= will_paginate @messages %>
+
 </div>
 <table class="table table-striped">
   <thead>
@@ -34,6 +36,9 @@
     <% end %>
   </tbody>
 </table>
+<p>
+<%= will_paginate @messages %>
+</p>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_message_path,
